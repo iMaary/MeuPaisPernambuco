@@ -5,18 +5,18 @@ using UnityEngine;
 public class bala : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private Joystick joystick1;
-    [SerializeField] private GameObject top;
+
+    private void Start()
+    {
+        //Vector3 joystickposition = new Vector3(joystick.Horizontal, joystick.Vertical);
+        //joystickposition.Normalize();
+        //float angle = Mathf.Atan2(joystickposition.y, joystickposition.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
 
     void Update()
     {
-        // transform.Translate(Vector3.right * speed * Time.deltaTime);
-        Vector2 direcao = new Vector2(joystick1.Horizontal, joystick1.Vertical);
-
-        float angle = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
-        print(angle);
-        transform.Translate(direcao * speed * Time.deltaTime);
-  
+        transform.Translate(Vector3.right * speed * Time.deltaTime, Space.Self);
         
     }
 }

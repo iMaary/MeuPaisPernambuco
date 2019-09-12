@@ -6,14 +6,12 @@ public class MovimentBehaviour : MonoBehaviour
 {
     [SerializeField] private float speed;
     private float moveHoriz, moveVert;
-    [SerializeField] private Joystick joystick;
+    [SerializeField] private FixedJoystick joystick;
 
     void Update()
     {
         Movement();
-        Vector2 direcao = new Vector2(joystick.Horizontal, joystick.Vertical);
-        float angle = Mathf.Atan2(direcao.y, direcao.x) * Mathf.Rad2Deg;
-        transform.Rotate(0, 0, angle);
+      
     }
 
     private void Movement()
