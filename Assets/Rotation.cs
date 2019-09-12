@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    public FixedJoystick joystick;
+    //[SerializeField]private FixedJoystick joystick;
+    [SerializeField] private FloatingJoystick floatingJoystick;
     public GameObject bala;
+    private GameObject joystick;
+    private float fireRate = 0.5f, nextFire = 0f;
     void Update()
     {
-        Vector3 joystickposition = new Vector3(joystick.Horizontal, joystick.Vertical);
+        Vector3 joystickposition = new Vector3(floatingJoystick.Horizontal, floatingJoystick.Vertical);
         joystickposition.Normalize();
         float angle = Mathf.Atan2(joystickposition.y, joystickposition.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
-        bala.transform.rotation = Quaternion.Euler(0, 0, angle); 
-
-        if (Input.GetKeyDown("space"))
+        bala.transform.rotation = Quaternion.Euler(0, 0, angle);
+        joystick = GameObject.FindGameObjectWithTag("joystick");
+        if (joystick != null)
         {
-            Atirar(angle);
+            if (Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                Atirar(angle);
+            }
         }
     }
 
