@@ -255,6 +255,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5311192740759225697, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2572429
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311192740759225697, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2572429
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311192740759225697, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2572429
+      objectReference: {fileID: 0}
     - target: {fileID: 5311192740759225703, guid: bf26a8b07c8448c4696f994c9537a828,
         type: 3}
       propertyPath: joystick
@@ -264,6 +279,27 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311192740759225702, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3852283048775497335, guid: bf9040511170be84f87b6af58990bb0f,
+        type: 3}
+    - target: {fileID: 5311192740759225702, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311192740759225702, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311192740759225702, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf26a8b07c8448c4696f994c9537a828, type: 3}
@@ -1073,7 +1109,7 @@ Transform:
   m_GameObject: {fileID: 1768097436}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1561908, y: 0.1561908, z: 0.1561908}
+  m_LocalScale: {x: 0.6071724, y: 0.6071724, z: 0.6071724}
   m_Children: []
   m_Father: {fileID: 1822060397}
   m_RootOrder: 0
@@ -1191,7 +1227,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 5.76, y: 9.74}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
