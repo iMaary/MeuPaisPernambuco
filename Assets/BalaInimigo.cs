@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class BalaInimigo : MonoBehaviour
 {
-    public Transform target;
+    private Transform player;
+    private Vector2 target;
+
     private float speed = 5f;
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        target = new Vector2(player.position.x, player.position.y);
         Invoke("Destroi", 1.5f);
     }
     void Update()
     {
-        //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        transform.Translate(Vector3.right * speed * Time.deltaTime, Space.Self);
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        
     }
 
     void Destroi()

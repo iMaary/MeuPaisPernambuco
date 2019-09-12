@@ -31,7 +31,5 @@ public class Rotation : MonoBehaviour
     {
         Vector3 m = new Vector3(transform.position.x, transform.position.y, -1);
         Instantiate(bala, m, bala.transform.rotation);
-        //bala.transform.rotation = Quaternion.Euler(0, 0, angle);
-        //bala.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
     }
 }
