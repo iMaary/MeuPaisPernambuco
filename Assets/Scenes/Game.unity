@@ -280,6 +280,11 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5311192740759225703, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1822060398}
     - target: {fileID: 5311192740759225702, guid: bf26a8b07c8448c4696f994c9537a828,
         type: 3}
       propertyPath: m_Sprite
@@ -639,6 +644,7 @@ MonoBehaviour:
   nextFire: 0
   player: {fileID: 1822060394}
   bala: {fileID: 2949911785128751861, guid: bd62d16246bf92849983691c29b32ecd, type: 3}
+  movimento: 0
 --- !u!58 &1021787131
 CircleCollider2D:
   m_ObjectHideFlags: 0

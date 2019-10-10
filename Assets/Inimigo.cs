@@ -11,21 +11,27 @@ public class Inimigo : MonoBehaviour
     private Transform target;
     private Rigidbody2D rb, rbPlayer;
     public GameObject bala;
+    public bool movimento;
 
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
         rbPlayer = player.GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        movimento = true;
     }
 
     private void Update()
     {
         playerCollider = Physics2D.OverlapCircle(transform.position, 3.5f, LayerMask.GetMask("Player"));
         playerShootCollider = Physics2D.OverlapCircle(transform.position, 5f, LayerMask.GetMask("Player"));
-        if (playerShootCollider)
+        if (playerShootCollider && movimento)
         {
-            Ataque();
+            Movimento();
+        }
+        else
+        {
+
         }
         
     }
@@ -37,7 +43,7 @@ public class Inimigo : MonoBehaviour
         Instantiate(bala, m, Quaternion.identity);       
     }
 
-    void Ataque()
+    void Movimento()
     {
         if(playerCollider)
         {

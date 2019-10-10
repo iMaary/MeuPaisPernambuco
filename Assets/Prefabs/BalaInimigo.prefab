@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6744410425511126476}
   - component: {fileID: 6438031763255946179}
   - component: {fileID: -2935003425566232426}
+  - component: {fileID: 7588735079780805410}
   m_Layer: 0
   m_Name: BalaInimigo
-  m_TagString: Untagged
+  m_TagString: balaInimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,4 +94,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad4644321c4f1a43b845bab67a9e108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+--- !u!61 &7588735079780805410
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2949911785128751861}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
