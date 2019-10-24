@@ -12,21 +12,23 @@ public class MovimentBehaviour : MonoBehaviour
     [SerializeField]private Rigidbody2D rb;
     private bool movimento;
     [SerializeField] private Inimigo inimigo;
-    private bool movInimigo;
+    public bool movInimigo;
+    private float clickAtual;
+    private float clickAnterior = -1000;
+    private bool putz;
 
     private void Start()
     {
+        putz = false;
         movimento = true;
         movInimigo = true;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            img.fillAmount -= 0.2f;
-        }
+       
         Movement(movimento);
+        preso(putz);
     }
 
     private void Movement(bool x)
@@ -53,10 +55,34 @@ public class MovimentBehaviour : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
             movimento = false;
             movInimigo = false;
+            putz = true;
+            
         }
         else
         {
            
         }
+    }
+
+    void preso(bool vra)
+    {
+        if(vra)
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                clickAtual = Time.time;
+                if (clickAtual - clickAnterior < 1f)
+                {
+                    print("putz");
+
+                    movimento = true;
+                    putz = false;
+                    img.fillAmount -= 0.4f;
+                }
+                clickAnterior = clickAtual;
+                
+            }
+        }
+        
     }
 }

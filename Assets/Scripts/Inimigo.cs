@@ -12,6 +12,7 @@ public class Inimigo : MonoBehaviour
     private Rigidbody2D rb, rbPlayer;
     public GameObject bala;
     public bool movimento;
+    private MovimentBehaviour movimentBehaviour;
 
     void Start()
     {
@@ -19,10 +20,12 @@ public class Inimigo : MonoBehaviour
         rbPlayer = player.GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         movimento = true;
+        movimentBehaviour = GameObject.FindGameObjectWithTag("Player").GetComponent<MovimentBehaviour>();
     }
 
     private void Update()
     {
+        movimento = movimentBehaviour.GetComponent<MovimentBehaviour>().movInimigo;
         playerCollider = Physics2D.OverlapCircle(transform.position, 3.5f, LayerMask.GetMask("Player"));
         playerShootCollider = Physics2D.OverlapCircle(transform.position, 5f, LayerMask.GetMask("Player"));
         if (playerShootCollider && movimento)
