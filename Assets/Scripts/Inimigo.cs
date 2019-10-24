@@ -60,4 +60,12 @@ public class Inimigo : MonoBehaviour
             Atirar();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "bala")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }

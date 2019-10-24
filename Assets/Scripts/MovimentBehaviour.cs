@@ -17,6 +17,7 @@ public class MovimentBehaviour : MonoBehaviour
     private float clickAnterior = -1000;
     private bool putz;
 
+
     private void Start()
     {
         putz = false;
@@ -34,13 +35,12 @@ public class MovimentBehaviour : MonoBehaviour
     private void Movement(bool x)
     {
         if(x)
-            {
-            moveHoriz = joystick.Horizontal * speed;
-            moveVert = joystick.Vertical * speed;
+        {
+            moveHoriz = joystick.Horizontal;
+            moveVert = joystick.Vertical;
 
-            transform.Translate(Vector3.right * moveHoriz * Time.deltaTime);
-            transform.Translate(Vector3.up * moveVert * Time.deltaTime);
-
+            Vector3 movement = new Vector3(moveHoriz, moveVert, 0.0f);
+            rb.velocity = movement * speed;
 
             moveHoriz = (joystick.Horizontal >= 0.3f) ? speed : (joystick.Horizontal <= -0.3f) ? -speed : 0f;
             moveVert = (joystick.Horizontal >= 0.3f) ? speed : (joystick.Horizontal <= -0.3f) ? -speed : 0f;
@@ -74,7 +74,8 @@ public class MovimentBehaviour : MonoBehaviour
                 if (clickAtual - clickAnterior < 1f)
                 {
                     print("putz");
-
+                    rb.constraints = RigidbodyConstraints2D.None;
+                    rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                     movimento = true;
                     putz = false;
                     img.fillAmount -= 0.4f;

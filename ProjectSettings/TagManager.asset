@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - joystick
+  - bala
+  - balaInimigo
+  - Inimigo
   layers:
   - Default
   - TransparentFX
