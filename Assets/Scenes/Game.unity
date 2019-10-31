@@ -433,6 +433,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5311192740759225703, guid: bf26a8b07c8448c4696f994c9537a828,
+        type: 3}
+      propertyPath: barraForca
+      value: 
+      objectReference: {fileID: 941637930}
     - target: {fileID: 5311192740759225702, guid: bf26a8b07c8448c4696f994c9537a828,
         type: 3}
       propertyPath: m_Sprite

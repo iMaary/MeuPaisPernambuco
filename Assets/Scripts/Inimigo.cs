@@ -42,8 +42,12 @@ public class Inimigo : MonoBehaviour
 
     void Atirar()
     {
-        Vector3 m = new Vector3(transform.position.x, transform.position.y, -1);
-        Instantiate(bala, m, Quaternion.identity);       
+        if(playerCollider)
+        {
+            Vector3 m = new Vector3(transform.position.x, transform.position.y, -1);
+            Instantiate(bala, m, Quaternion.identity);
+        }
+              
     }
 
     void Movimento()
@@ -68,4 +72,5 @@ public class Inimigo : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }

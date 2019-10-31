@@ -2,34 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MovimentBehaviour : MonoBehaviour
 {
     [SerializeField] private float speed;
     private float moveHoriz, moveVert;
     [SerializeField] private FixedJoystick joystick;
-    [SerializeField] private Image img;
+    [SerializeField] private Image barraForca;
     [SerializeField]private Rigidbody2D rb;
     private bool movimento;
     [SerializeField] private Inimigo inimigo;
     public bool movInimigo;
     private float clickAtual;
     private float clickAnterior = -1000;
-    private bool putz;
+    private bool espaco;
+    private int forca;
+    private GameObject[] balaInimigo;
 
 
     private void Start()
     {
-        putz = false;
+        espaco = false;
         movimento = true;
         movInimigo = true;
+        forca = 3;
     }
 
     void Update()
     {
        
         Movement(movimento);
-        preso(putz);
+        preso(espaco);
+        if(forca == 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     private void Movement(bool x)
@@ -53,10 +61,19 @@ public class MovimentBehaviour : MonoBehaviour
         {
             print("blbablalblabl");
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            barraForca.fillAmount -= 0.4f;
+            forca--;
             movimento = false;
             movInimigo = false;
-            putz = true;
-            
+            espaco = true;
+            balaInimigo = GameObject.FindGameObjectsWithTag("balaInimigo");
+
+            foreach (GameObject bala in balaInimigo)
+            {
+                Destroy(bala);
+            }
+
+
         }
         else
         {
@@ -73,12 +90,13 @@ public class MovimentBehaviour : MonoBehaviour
                 clickAtual = Time.time;
                 if (clickAtual - clickAnterior < 1f)
                 {
-                    print("putz");
+                    print("espaco");
                     rb.constraints = RigidbodyConstraints2D.None;
                     rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                     movimento = true;
-                    putz = false;
-                    img.fillAmount -= 0.4f;
+                    espaco = false;
+                    StartCoroutine(Inimigo());                   
+                   
                 }
                 clickAnterior = clickAtual;
                 
@@ -86,4 +104,10 @@ public class MovimentBehaviour : MonoBehaviour
         }
         
     }
+    IEnumerator Inimigo()
+    {
+        yield return new WaitForSeconds(2);
+        movInimigo = true;
+    }
 }
+
