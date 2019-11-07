@@ -5,20 +5,21 @@ using UnityEngine;
 public class Inimigo : MonoBehaviour
 {  
     [SerializeField] private float speed, fireRate = 0.9f, nextFire = 0f;
-    private float dx, dy;
+    private float dx, dy, rot;
     public GameObject player, bala;
     private bool playerCollider, playerShootCollider, movimento;
     private Transform target;
     private Rigidbody2D rb, rbPlayer;
     private MovimentBehaviour movimentBehaviour;
     private Animator atr;
-    private SpriteRenderer sr;
+    private SpriteRenderer sr, srBullet;
 
 
     private void Awake()
     {
         atr = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        srBullet = bala.GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -47,7 +48,8 @@ public class Inimigo : MonoBehaviour
     {
         if(playerCollider)
         {
-            Vector3 m = new Vector3(transform.position.x, transform.position.y, -1);
+            //rot = (player.transform.position.y > transform.position.y)? 90f : 270f;
+            Vector3 m = new Vector3(transform.position.x, transform.position.y, rot);
             Instantiate(bala, m, Quaternion.identity);
         }
               
@@ -71,6 +73,7 @@ public class Inimigo : MonoBehaviour
         if (player.transform.position.x < transform.position.x && dy < dx)
         {
             sr.flipX = true;
+            srBullet.flipX = true;
             atr.SetBool("Up", false);
             atr.SetBool("Down", false);
             atr.SetBool("Horizontal", true);
@@ -78,6 +81,7 @@ public class Inimigo : MonoBehaviour
         else if (player.transform.position.x > transform.position.x && dy < dx)
         {
             sr.flipX = false;
+            srBullet.flipX = false;
             atr.SetBool("Up", false);
             atr.SetBool("Down", false);
             atr.SetBool("Horizontal", true);

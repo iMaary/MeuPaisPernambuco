@@ -39,7 +39,7 @@ public class MovimentBehaviour : MonoBehaviour
         preso(espaco);
         if(forca == 0)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("Menu");
         }
         if(GameObject.FindGameObjectsWithTag("Inimigo") == null)
         {
