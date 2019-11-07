@@ -14,6 +14,7 @@ public class Inimigo : MonoBehaviour
     public bool movimento;
     private MovimentBehaviour movimentBehaviour;
 
+
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
@@ -32,11 +33,7 @@ public class Inimigo : MonoBehaviour
         {
             Movimento();
         }
-        else
-        {
-
-        }
-        
+     
     }
 
 

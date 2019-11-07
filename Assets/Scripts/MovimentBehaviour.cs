@@ -19,6 +19,8 @@ public class MovimentBehaviour : MonoBehaviour
     private bool espaco;
     private int forca;
     private GameObject[] balaInimigo;
+    [SerializeField] private Button btn;
+
 
 
     private void Start()
@@ -27,6 +29,7 @@ public class MovimentBehaviour : MonoBehaviour
         movimento = true;
         movInimigo = true;
         forca = 3;
+
     }
 
     void Update()
@@ -38,6 +41,12 @@ public class MovimentBehaviour : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+        if(GameObject.FindGameObjectsWithTag("Inimigo") == null)
+        {
+            print("aff");
+            SceneManager.LoadScene("Win");    
+        }
+       
     }
 
     private void Movement(bool x)
@@ -85,6 +94,7 @@ public class MovimentBehaviour : MonoBehaviour
     {
         if(vra)
         {
+            btn.onClick.AddListener(Soltar);
             if (Input.GetKeyDown("space"))
             {
                 clickAtual = Time.time;
@@ -108,6 +118,15 @@ public class MovimentBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         movInimigo = true;
+    }
+
+    void Soltar()
+    {
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        movimento = true;
+        espaco = false;
+        StartCoroutine(Inimigo());
     }
 }
 
