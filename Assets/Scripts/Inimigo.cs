@@ -5,15 +5,21 @@ using UnityEngine;
 public class Inimigo : MonoBehaviour
 {  
     [SerializeField] private float speed, fireRate = 0.9f, nextFire = 0f;
-    public GameObject player;
-    private bool playerCollider;
-    private bool playerShootCollider;
+    private float dx, dy;
+    public GameObject player, bala;
+    private bool playerCollider, playerShootCollider, movimento;
     private Transform target;
     private Rigidbody2D rb, rbPlayer;
-    public GameObject bala;
-    public bool movimento;
     private MovimentBehaviour movimentBehaviour;
+    private Animator atr;
+    private SpriteRenderer sr;
 
+
+    private void Awake()
+    {
+        atr = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     void Start()
     {
@@ -59,6 +65,39 @@ public class Inimigo : MonoBehaviour
         {
             nextFire = Time.time + fireRate;
             Atirar();
+        }
+        dx = Mathf.Abs(player.transform.position.x);
+        dy = Mathf.Abs(player.transform.position.y);
+        if (player.transform.position.x < transform.position.x && dy < dx)
+        {
+            sr.flipX = true;
+            atr.SetBool("Up", false);
+            atr.SetBool("Down", false);
+            atr.SetBool("Horizontal", true);
+        }
+        else if (player.transform.position.x > transform.position.x && dy < dx)
+        {
+            sr.flipX = false;
+            atr.SetBool("Up", false);
+            atr.SetBool("Down", false);
+            atr.SetBool("Horizontal", true);
+        }
+        else if (player.transform.position.y > transform.position.y && dy > dx)
+        {
+            atr.SetBool("Up", true);
+            atr.SetBool("Down", false);
+            atr.SetBool("Horizontal", false);
+        }
+        else if (player.transform.position.y < transform.position.y && dy > dx) {
+            atr.SetBool("Up", false);
+            atr.SetBool("Down", true);
+            atr.SetBool("Horizontal", false);
+        }
+        else
+        {
+            atr.SetBool("Up", false);
+            atr.SetBool("Down", false);
+            atr.SetBool("Horizontal", false);
         }
     }
 
