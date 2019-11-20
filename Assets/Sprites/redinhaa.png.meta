@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: 82fc5d064df4ac24d9cf7e6a603eed1c
+guid: c296d473078b5e94389b35da9a49eb22
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3725139703807524654
-    second: menu principal_0
+      213: 3160219790717445174
+    second: redinhaa_0
   - first:
-      213: 6338931699799670045
-    second: menu principal_1
+      213: 6918212270377657079
+    second: redinhaa_1
+  - first:
+      213: -6611788769597591264
+    second: redinhaa_2
+  - first:
+      213: -5367549991045993797
+    second: redinhaa_3
+  - first:
+      213: 6570978058114623130
+    second: redinhaa_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -104,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu principal_0
+      name: redinhaa_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 470
-        width: 7284
-        height: 4171
+        y: 0
+        width: 633
+        height: 1711
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fda5bdd13eeeac44ea465ec2ae818014
-      internalID: 3725139703807524654
+      spriteID: 8ea6d3f0905a8ff43a51bd397cc67455
+      internalID: 3160219790717445174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: menu principal_1
+      name: redinhaa_1
       rect:
         serializedVersion: 2
-        x: 5992
-        y: 612
-        width: 1217
-        height: 332
+        x: 633
+        y: 0
+        width: 655
+        height: 1711
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,8 +148,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf667259da8d3144187be57b7ca9a20e
-      internalID: 6338931699799670045
+      spriteID: 331dc3c8e366e7c4e83388554e757673
+      internalID: 6918212270377657079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redinhaa_2
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 16
+        width: 947
+        height: 1695
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aaa90d11c54f8f48be5391c0369fac9
+      internalID: -6611788769597591264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redinhaa_3
+      rect:
+        serializedVersion: 2
+        x: 2904
+        y: 12
+        width: 879
+        height: 1699
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba76f580763675247a7ee96d7db08ded
+      internalID: -5367549991045993797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: redinhaa_4
+      rect:
+        serializedVersion: 2
+        x: 4075
+        y: 7
+        width: 965
+        height: 1704
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc761c99ed78033429f834cc42f9fe72
+      internalID: 6570978058114623130
       vertices: []
       indices: 
       edges: []
