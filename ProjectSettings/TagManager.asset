@@ -8,6 +8,10 @@ TagManager:
   - bala
   - balaInimigo
   - Inimigo
+  - Ajuda
+  - Iniciar
+  - Confi
+  - music
   layers:
   - Default
   - TransparentFX

@@ -20,6 +20,7 @@ public class MovimentBehaviour : MonoBehaviour
     private int forca;
     private GameObject[] balaInimigo;
     [SerializeField] private Button btn;
+    [SerializeField] private AudioSource walk; 
 
 
 
@@ -39,7 +40,7 @@ public class MovimentBehaviour : MonoBehaviour
         preso(espaco);
         if(forca == 0)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("GameOver");
         }
         if(GameObject.FindGameObjectsWithTag("Inimigo") == null)
         {
@@ -61,6 +62,10 @@ public class MovimentBehaviour : MonoBehaviour
 
             moveHoriz = (joystick.Horizontal >= 0.3f) ? speed : (joystick.Horizontal <= -0.3f) ? -speed : 0f;
             moveVert = (joystick.Horizontal >= 0.3f) ? speed : (joystick.Horizontal <= -0.3f) ? -speed : 0f;
+
+            walk = GetComponent<AudioSource>();
+            walk.Play();
+
         }
        
     }
