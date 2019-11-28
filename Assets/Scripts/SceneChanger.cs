@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     [SerializeField] private AudioSource btnCreditos; 
-    [SerializeField] private AudioSource btnVoltar;  
+     
 
     public void ChangeScene(string sceneName)
     {
         btnCreditos = GetComponent<AudioSource>();
-        btnVoltar = GetComponent<AudioSource>();
+        //btnVoltar = GetComponent<AudioSource>();
         btnCreditos.Play();
-        btnVoltar.Play();
         SceneManager.LoadScene(sceneName);
         
         

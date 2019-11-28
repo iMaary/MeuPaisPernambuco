@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class noDestroy : MonoBehaviour
 {
+    [SerializeField]
     GameObject som;
+    GameObject[] sons;
+
+    
   
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-        som = GameObject.FindGameObjectWithTag("music");
-        print("dfdf");
-
-        //se som já foi instanciado, destrua o novo.
+        //DontDestroyOnLoad(this.gameObject);
+        sons = GameObject.FindGameObjectsWithTag("music");
         
+        if(sons.Length == 0)
+        {
+            GameObject SomInstanciado = Instantiate(som);
+            DontDestroyOnLoad(SomInstanciado);
+            print("dfdf");
+        }
     }
 }

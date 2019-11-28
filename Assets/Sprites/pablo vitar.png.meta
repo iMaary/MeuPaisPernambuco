@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 6cba583b81630804c9d81e7d2d1a680f
+guid: bc4eb82c675e05e43b8c920f796b7c0a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -509353642979399044
-    second: principal_0
+      213: 5986520636874606596
+    second: pablo vitar_0
   - first:
-      213: 2885309556223955462
-    second: principal_1
+      213: 3539323386219794510
+    second: pablo vitar_1
   - first:
-      213: -1822190405225627359
-    second: principal_2
+      213: -5091433871308700937
+    second: pablo vitar_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -107,54 +107,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: principal_0
+      name: pablo vitar_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 158.8
-        height: 1123
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d739fa51338f2084f95fd03621bc3a06
-      internalID: -509353642979399044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: principal_1
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 577
-        width: 143
-        height: 224
-      alignment: 9
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0ca949d0cb4e944f8ff2665df98333f
-      internalID: 2885309556223955462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: principal_2
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 584
-        width: 159
+        x: 91
+        y: 627
+        width: 135
         height: 202
       alignment: 9
       pivot: {x: 0, y: 0}
@@ -163,8 +121,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca16ef1409cd6344fb054d2180ec56a1
-      internalID: -1822190405225627359
+      spriteID: b773c51badf2ee14098de74d17d70dad
+      internalID: 5986520636874606596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pablo vitar_1
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 626
+        width: 142
+        height: 192
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab664b69decb1b145a4b4ae272333846
+      internalID: 3539323386219794510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pablo vitar_2
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 626
+        width: 137
+        height: 199
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb28dd69b28412647b63b58e850e4f9e
+      internalID: -5091433871308700937
       vertices: []
       indices: 
       edges: []

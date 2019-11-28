@@ -18,5 +18,6 @@ public class bala : MonoBehaviour
     {
         transform.Translate(Vector3.right * speed * Time.deltaTime, Space.Self);
         Destroy(this.gameObject, 0.7f);
+        
     }
 }
