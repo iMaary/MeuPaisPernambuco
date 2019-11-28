@@ -12,12 +12,11 @@ public class noDestroy : MonoBehaviour
   
     private void Awake()
     {
-        //DontDestroyOnLoad(this.gameObject);
         sons = GameObject.FindGameObjectsWithTag("music");
-        
+
         if(sons.Length == 0)
         {
-            GameObject SomInstanciado = Instantiate(som);
+            GameObject somInstanciado = Instantiate(som);
             DontDestroyOnLoad(SomInstanciado);
             print("dfdf");
         }

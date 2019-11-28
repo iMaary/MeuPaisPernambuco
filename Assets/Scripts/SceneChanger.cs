@@ -11,7 +11,6 @@ public class SceneChanger : MonoBehaviour
     public void ChangeScene(string sceneName)
     {
         btnCreditos = GetComponent<AudioSource>();
-        //btnVoltar = GetComponent<AudioSource>();
         btnCreditos.Play();
         SceneManager.LoadScene(sceneName);
         
